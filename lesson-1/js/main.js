@@ -8,5 +8,6 @@ let mission;
 mission = 'get Rich';
 let period;
 period = 'two years';
+// переменные
 
 console.log('first lesson complete');

@@ -8,7 +8,6 @@ let num = 266219;
 
 console.log(result);
 
-
 let power = result ** 3;
     power = power.toString();
 

@@ -33,7 +33,7 @@ console.log(Math.floor(dayBudget));
 if (dayBudget > 800){
   console.log('Высокий уровень дохода');
 }
-  else if (800 > dayBudget > 300){
+  else if (dayBudget < 800 && dayBudget > 300) {
     console.log('Средний уровень дохода');
 }
   else if (300 > dayBudget){

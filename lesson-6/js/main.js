@@ -43,20 +43,18 @@ let appData = {
     }
   },
   getExpencesMonth: function () {
-    let sum = 0;
     for (let key in appData.expenses){
-      sum += +appData.expenses[key];
+      appData.expenсesMonth += +appData.expenses[key];
     }
-    return sum;
   },
   getBudget: function () {
-    appData.budgetMonth = money - +appData.getExpencesMonth();
+    appData.budgetMonth = money - +appData.expenсesMonth;
     console.log('Доход в месяц: ', appData.budgetMonth);
 
     appData.budgetDay = appData.budgetMonth / 30;
     console.log('Дневной бюджет: ', appData.budgetDay);
 
-    return +money - +appData.getExpencesMonth();
+    return +money - appData.expenсesMonth;
   },
   getStatusIncome: function () {
     if (appData.getBudget() > 800) {

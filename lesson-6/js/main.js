@@ -10,7 +10,7 @@ let start = function() {
 start();
 
 let appData = {
-  budget: money,
+  budget: +money,
   budgetDay: 0,
   budgetMonth: 0,
   expenсesMonth: 0,
@@ -44,29 +44,28 @@ let appData = {
   },
   getExpencesMonth: function () {
     for (let key in appData.expenses){
-      appData.expenсesMonth += +appData.expenses[key];
+      appData.expenсesMonth += appData.expenses[key]*1;
     }
   },
   getBudget: function () {
-    appData.budgetMonth = money - +appData.expenсesMonth;
+    appData.budgetMonth = appData.budget - +appData.expenсesMonth;
     console.log('Доход в месяц: ', appData.budgetMonth);
 
     appData.budgetDay = appData.budgetMonth / 30;
     console.log('Дневной бюджет: ', appData.budgetDay);
 
-    return +money - appData.expenсesMonth;
   },
   getStatusIncome: function () {
-    if (appData.getBudget() > 800) {
+    if (appData.budgetMonth > 800) {
       return ('Высокий уровень дохода');
     }
-    else if (appData.getBudget() < 800 && appData.getBudget() > 300) {
+    else if (appData.budgetMonth < 800 && appData.budgetMonth > 300) {
       return ('Средний уровень дохода');
     }
-    else if (300 > appData.getBudget()) {
+    else if (300 > appData.budgetMonth && appData.budgetMonth > 0) {
       return ('Низкий уровень дохода');
     }
-    else if (0 > appData.getBudget()) {
+    else if (0 > appData.budgetMonth) {
       return ('Что то пошло не так');
     }
     else {
@@ -75,14 +74,27 @@ let appData = {
   },
   
   getTargetMonth: function () {
-    return appData.mission / acumulatedMonth;
+    appData.period = appData.mission / appData.budgetMonth;
   }
 };
 
 appData.asking();
 appData.getExpencesMonth();
-appData.getStatusIncome();
 appData.getBudget();
-let acumulatedMonth = appData.getBudget();
+appData.getStatusIncome();
 appData.getTargetMonth();
+console.log(appData.getStatusIncome());
+console.log('Расходы за месяц составляют: ' + appData.expenсesMonth);
 
+if (appData.budgetMonth < 0) {
+  console.log('Цель не будет достигнута');
+}
+else {
+  console.log('Цель будет достигнута за: ' + Math.ceil(appData.period) + ' месяцев');
+}
+console.log('Ваш уровень дохода: ' + appData.getStatusIncome());
+
+console.log("Наша программа включает в себя данные: ");
+for (let key in appData) {
+  console.log(key + ": " + appData[key]);
+}

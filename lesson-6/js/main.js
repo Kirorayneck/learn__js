@@ -13,7 +13,7 @@ let appData = {
   budget: +money,
   budgetDay: 0,
   budgetMonth: 0,
-  expenсesMonth: 0,
+  expensesMonth: 0,
   income: {},
   addIncome: [],
   expenses: {},
@@ -42,13 +42,13 @@ let appData = {
         appData.expenses[question] = costs;
     }
   },
-  getExpencesMonth: function () {
+  getExpensesMonth: function () {
     for (let key in appData.expenses){
-      appData.expenсesMonth += appData.expenses[key]*1;
+      appData.expensesMonth += appData.expenses[key]*1;
     }
   },
   getBudget: function () {
-    appData.budgetMonth = appData.budget - +appData.expenсesMonth;
+    appData.budgetMonth = appData.budget - +appData.expensesMonth;
     console.log('Доход в месяц: ', appData.budgetMonth);
 
     appData.budgetDay = appData.budgetMonth / 30;
@@ -79,7 +79,7 @@ let appData = {
 };
 
 appData.asking();
-appData.getExpencesMonth();
+appData.getExpensesMonth();
 appData.getBudget();
 appData.getStatusIncome();
 appData.getTargetMonth();

@@ -92,7 +92,7 @@ showResult() {
   incomePeriodValue.value = this.calcPeriod();
     
   periodSelect.addEventListener('input', function () {
-    incomePeriodValue.value = This.calcPeriod();
+    incomePeriodValue.value = this.calcPeriod();
   });
 }
 getBlock() {
@@ -150,7 +150,7 @@ getExpenses(){
     let itemExpenses = item.querySelector('.expenses-title').value;
     let cashExpenses = item.querySelector('.expenses-amount').value;
     if (itemExpenses !== '' && cashExpenses !== '') {
-      This.expenses[itemExpenses] = +cashExpenses;
+      this.expenses[itemExpenses] = +cashExpenses;
     }
   });
 }
@@ -186,14 +186,14 @@ getInfoDeposit() {
   }
 }
 getPercent() {
-  This.percent = +This.moneyDeposit * +This.percentDeposit / 12;
+  this.percent = +this.moneyDeposit * +this.percentDeposit / 12;
 }
 getBudget() {
-  This.budgetMonth = This.budget + This.incomeMonth - +This.expensesMonth + This.percent;
+  this.budgetMonth = this.budget + this.incomeMonth - +this.expensesMonth + this.percent;
     console.log('Доход в месяц: ', this.budgetMonth);
 
-  This.budgetDay = This.budgetMonth / 30;
-  console.log('Дневной бюджет: ', This.budgetDay);
+  this.budgetDay = this.budgetMonth / 30;
+  console.log('Дневной бюджет: ', this.budgetDay);
 
 }
 getPeriodAmount() {
@@ -204,13 +204,13 @@ getPeriodAmount() {
 }
 
 getStatusIncome() {
-  if (This.budgetMonth > 800) {
+  if (this.budgetMonth > 800) {
       return ('Высокий уровень дохода');
-  } else if (This.budgetMonth < 800 && This.budgetMonth > 300) {
+  } else if (this.budgetMonth < 800 && this.budgetMonth > 300) {
       return ('Средний уровень дохода');
-  } else if (300 > This.budgetMonth && This.budgetMonth > 0) {
+  } else if (300 > this.budgetMonth && this.budgetMonth > 0) {
       return ('Низкий уровень дохода');
-  } else if (0 > This.budgetMonth) {
+  } else if (0 > this.budgetMonth) {
       return ('Что то пошло не так');
     } else {
       return ('Ошибка');
@@ -303,6 +303,7 @@ eventsListeners() {
   });
 
   this.getPeriodAmount();
-
+  }
 }
+const appData = new AppData();
 appData.eventsListeners();

@@ -3,17 +3,20 @@
       popupBtn = document.querySelectorAll('.popup-btn'),
       popupContent = document.querySelector('.popup-content');
 
-    let count = 0;
+    let count = 0,
+        appear;
     popupBtn.forEach((elem) => {
       elem.addEventListener('click', () => {
         popup.style.display = 'block';
         popupContent.style.opacity = 0 + '%';
-        const popupUp = () => {
+        let popupUp = () => {
+          appear = requestAnimationFrame(popupUp);
           if (document.body.clientWidth > 768) {
-            count++;
-            popupContent.style.opacity = count + '%';
-            if (count < 100) {
-              setTimeout(popupUp, 20);
+            count += 0.05;
+            popupContent.style.opacity = count;
+            if (count > 1) {
+              cancelAnimationFrame(appear);
+              popup.style.opacity = 1;
             }
           } else {
             popupContent.style.opacity = 1;

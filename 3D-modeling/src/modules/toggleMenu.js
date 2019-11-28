@@ -2,7 +2,8 @@ const toggleMenu = () => {
 
   const btnMenu = document.querySelector(`.menu`),
     menu = document.querySelector(`menu`),
-    body = document.querySelector('body');
+    body = document.querySelector('body'),
+    menuPoint = menu.querySelectorAll(`ul>li`);
   const openMenu = () => {
     menu.classList.add('active-menu');
   };
@@ -15,10 +16,12 @@ const toggleMenu = () => {
       openMenu();
     } else if (target.closest(`.close-btn`) || !target.closest(`menu`)) {
       closeMenu();
-    } else if (target.tagName != 'li') {
-      closeMenu();
     } else {
-      closeMenu();
+      menuPoint.forEach((item) => {
+        if (item.contains(target)) {
+          closeMenu();
+        }
+      });
     }
   });
 };

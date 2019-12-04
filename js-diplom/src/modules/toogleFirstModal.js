@@ -1,6 +1,5 @@
 const toogleFirstModal = () => {
   const callBtn = document.querySelectorAll('.call-btn'),
-        popup = document.querySelector('.popup'),
         firstModal = document.querySelector('.popup-call');
 
   callBtn.forEach((elem) => {
@@ -13,7 +12,7 @@ const toogleFirstModal = () => {
     });
   });
   
-  popup.addEventListener('click', (event) => {
+  firstModal.addEventListener('click', (event) => {
     let target = event.target;
     if (target.classList.contains('popup-close')) {
       hideMenu();

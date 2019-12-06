@@ -3,8 +3,6 @@ const firstTabs = () => {
     tab = tabHeader.querySelectorAll('.panel-heading'),
     tabContent = tabHeader.querySelectorAll('.panel-collapse'),
     switchLabel = document.querySelector('.onoffswitch-label'),
-    switchInner = switchLabel.querySelectorAll('.onoffswitch-inner'),
-    switchSpan = switchLabel.querySelectorAll('.onoffswitch-switch'),
     panelTwo = document.querySelector('.panel-two'),
     titleText = panelTwo.querySelectorAll('.title-text'),
     selectBox = panelTwo.querySelectorAll('.select-box'),

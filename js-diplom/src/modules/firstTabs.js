@@ -1,7 +1,7 @@
 const firstTabs = () => {
-  const tabHeader = document.querySelector('#accordion'),
-    tab = tabHeader.querySelectorAll('.panel-heading'),
-    tabContent = tabHeader.querySelectorAll('.panel-collapse'),
+  const tabHeader = document.querySelector(`#accordion`),
+    tab = tabHeader.querySelectorAll(`.panel-heading`),
+    tabContent = tabHeader.querySelectorAll(`.panel-collapse`),
     switchLabel = document.querySelector('.onoffswitch-label'),
     panelTwo = document.querySelector('.panel-two'),
     titleText = panelTwo.querySelectorAll('.title-text'),
@@ -41,7 +41,7 @@ const firstTabs = () => {
     item.addEventListener(`click`, (event) => {
       event.preventDefault();
       let target = event.target;
-      if (target.parentNode === item.children[0] || target.parentNode === item || target === item) {
+      if (target.parentNode === item.children[0] || target.parentNode === item || target === item || target.classList.contains(`link-text`)) {
         toggleTabContent(i);
       }
     });

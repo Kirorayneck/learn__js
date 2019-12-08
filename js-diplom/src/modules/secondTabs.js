@@ -11,17 +11,14 @@ const secondTabs = () => {
         }
       }
     };
-  tabHeader.addEventListener('click', (event) => {
-    let target = event.target;
-    target = target.closest('.panel-heading');
-    if (target.classList.contains('panel-heading')) {
-      tab.forEach((item, i) => {
-        if (item === target) {
-          event.preventDefault();
-          toggleTabContent(i);
-        }
-      });
-    }
+  tab.forEach((item, i) => {
+    item.addEventListener(`click`, (event) => {
+      event.preventDefault();
+      let target = event.target;
+      if (target.parentNode === item.children[0] || target.parentNode === item || target === item) {
+        toggleTabContent(i);
+      }
+    });
   });
 };
 

@@ -37,29 +37,24 @@ const firstTabs = () => {
       }
     }
   };
-  tabHeader.addEventListener('click', (event) => {
-    let target = event.target;
-    target = target.closest('.panel-heading');
-    if (target.classList.contains('panel-heading')) {
-      tab.forEach((item, i) => {
-        if (item === target) {
-          event.preventDefault();
-          toggleTabContent(i);
-        }
-      });
-    }
+  tab.forEach((item, i) => {
+    item.addEventListener(`click`, (event) => {
+      event.preventDefault();
+      let target = event.target;
+      if (target.parentNode === item.children[0] || target.parentNode === item || target === item) {
+        toggleTabContent(i);
+      }
+    });
   });
-  tabHeader.addEventListener('click', (event) => {
-    let target = event.target;
-    target = target.closest('.construct-btn');
-    if (target.classList.contains('construct-btn')) {
-      constructBtn.forEach((item, i) => {
-        if (item === target) {
-          event.preventDefault();
-          toggleTabContent(i + 1);
-        }
-      });
-    }
+  constructBtn.forEach((item, i) => {
+    item.addEventListener(`click`, (event) => {
+      event.preventDefault();
+      let target = event.target;
+      if (target.parentNode === item.children[0] || target.parentNode === item || target === item) {
+        toggleTabContent(i + 1);
+        countSum();
+      }
+    });
   });
   switchLabel.addEventListener('click', (event) => {
     let target = event.target;
@@ -154,13 +149,6 @@ const firstTabs = () => {
   tabHeader.addEventListener('change', (event) => {
     const target = event.target;
     if (target.matches('select') || target.matches('input')) {
-      countSum();
-    }
-  });
-  tabHeader.addEventListener('click', (event) => {
-    let target = event.target;
-    target = target.closest('.construct-btn');
-    if (target.classList.contains('construct-btn')) {
       countSum();
     }
   });

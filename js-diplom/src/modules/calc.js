@@ -83,8 +83,12 @@ const calc = () => {
     if (target.matches('select') || target.matches('input')) {
       countSum();
     }
-});
-
- 
+    });
+    calcBlock.addEventListener('click', (event) => {
+      let target = event.target;
+      if (target.classList.contains('construct-btn')) {
+        countSum();
+      }
+    });
 };
 calc();

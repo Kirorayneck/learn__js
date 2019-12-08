@@ -1,10 +1,12 @@
 const consultation = () => {
   const consultationBtn = document.querySelector('.consultation-btn'),
-    popupConsultation = document.querySelector('.popup-consultation');
+    popupConsultation = document.querySelector('.popup-consultation'),
+    directorForm = document.querySelector('.director-form'),
+    questionInput = directorForm.querySelector('input');
 
   consultationBtn.addEventListener('click', (event) => {
       let target = event.target;
-      if (target.classList.contains('consultation-btn')) {
+      if (target.classList.contains('consultation-btn') && questionInput.value !== '') {
         showModal();
       }
   });

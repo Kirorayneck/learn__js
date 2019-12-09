@@ -1,6 +1,5 @@
 const sendForm = (formId) => {
   const errorMessage = `Произошла ошибка :(`,
-    loadMessage = `Сообщение в пути`,
     succesMessage = `Сообщение получено! Мы скоро с вами свяжемся!`;
 
   const form = document.querySelector(formId);
@@ -23,9 +22,9 @@ const sendForm = (formId) => {
   form.addEventListener(`submit`, (event) => {
     event.preventDefault();
     inputs.forEach((item) => {
-      if (item.classList.contains(`error`)) {
+      if (item.classList.contains(`error`) || item.type === `tel` && item.value.length < 11 || item.type === `text` && item.value.length > 50 || item.value.length < 2) {
         return sendForm(false);
-      }
+      } 
     });
     statusMessage.remove();
     form.appendChild(a);

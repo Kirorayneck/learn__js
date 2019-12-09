@@ -8,10 +8,10 @@ const sendForm = (formClass) => {
   const inputs = form.querySelectorAll(`input`);
 
   const statusMessage = document.createElement(`div`);
-  statusMessage.style.cssText = `font-size: 2rem; color: yellow;`;
+  statusMessage.style.cssText = `font-size: 2rem; color: blue;`;
 
   const a = document.createElement(`div`);
-  a.style.cssText = `height: 50px; width: 50px; border-radius: 50%; border: 2px dotted yellow; margin: 0 auto;`;
+  a.style.cssText = `height: 50px; width: 50px; border-radius: 50%; border: 2px dotted blue; margin: 0 auto;`;
   let animate,
     count = 0;
   const loading = () => {

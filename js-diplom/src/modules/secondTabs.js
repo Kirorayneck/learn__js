@@ -22,4 +22,4 @@ const secondTabs = () => {
   });
 };
 
-secondTabs();
+export default secondTabs;

@@ -21,4 +21,4 @@ const validation = () => {
 
 
 };
-validation();
+export default validation;

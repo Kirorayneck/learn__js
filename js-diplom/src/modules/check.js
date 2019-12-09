@@ -28,4 +28,4 @@ const check = () => {
   };
 };
 
-check();
+export default check;

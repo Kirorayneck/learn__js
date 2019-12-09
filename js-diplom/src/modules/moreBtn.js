@@ -14,4 +14,4 @@ const moreBtn = () => {
       }
   });
 };
-moreBtn();
+export default moreBtn;

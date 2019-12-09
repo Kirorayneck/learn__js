@@ -1,6 +1,9 @@
 const sendForm = (formId) => {
   const errorMessage = `Произошла ошибка :(`,
-    succesMessage = `Сообщение получено! Мы скоро с вами свяжемся!`;
+        panelTwo = document.querySelector('.panel-two'),
+        selectBox = panelTwo.querySelectorAll('.select-box'),
+        totalValue = document.getElementById('calc-result'),
+        succesMessage = `Сообщение получено! Мы скоро с вами свяжемся!`;
 
   const form = document.querySelector(formId);
 
@@ -73,10 +76,4 @@ const sendForm = (formId) => {
   };
 
 };
-sendForm(`#form-1`);
-sendForm(`#form-2`);
-sendForm(`#form-3`);
-sendForm(`#form-4`);
-sendForm(`#form-5`);
-sendForm(`#form-6`);
-sendForm(`#form-7`);
+export default sendForm;

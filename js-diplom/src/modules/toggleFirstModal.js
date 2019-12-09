@@ -1,4 +1,4 @@
-const toogleFirstModal = () => {
+const toggleFirstModal = () => {
   const callBtn = document.querySelectorAll('.call-btn'),
         firstModal = document.querySelector('.popup-call');
 
@@ -30,4 +30,4 @@ const toogleFirstModal = () => {
     firstModal.style.display = 'none';
   };
 };
-toogleFirstModal();
+export default toggleFirstModal;

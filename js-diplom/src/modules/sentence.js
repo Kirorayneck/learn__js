@@ -30,4 +30,4 @@ const sentence = () => {
   };
 };
 
-sentence();
+export default sentence;

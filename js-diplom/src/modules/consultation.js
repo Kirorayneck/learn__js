@@ -29,4 +29,4 @@ const consultation = () => {
     popupConsultation.style.display = 'none';
   };
 };
-consultation();
+export default consultation;

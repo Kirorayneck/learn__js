@@ -9,8 +9,11 @@ const firstTabs = () => {
     totalValue = document.getElementById('calc-result'),
     collapseThree = document.querySelector('#collapseThree'),
     selectBox = panelTwo.querySelectorAll('.select-box'),
+    options = tabHeader.querySelector(`option`),
     constructBtn = tabHeader.querySelectorAll('.construct-btn'),
     calcSelect = calcType.querySelectorAll('.form-control'),
+    form = document.querySelector('#form-3'),
+    reset = form.querySelector(`.popup-close`),
     switchBtnSecond = collapseThree.querySelector('.onoffswitch-label');
 
     switchLabel.classList.add('true');
@@ -152,5 +155,11 @@ const firstTabs = () => {
       countSum();
     }
   });
+  reset.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.classList.contains('popup-close')) {
+      totalValue.value = '';
+    }
+  });
 };
-firstTabs();
+export default firstTabs;

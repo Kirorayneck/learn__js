@@ -1,9 +1,9 @@
-const sendForm = (formClass) => {
+const sendForm = (formId) => {
   const errorMessage = `Произошла ошибка :(`,
     loadMessage = `Сообщение в пути`,
     succesMessage = `Сообщение получено! Мы скоро с вами свяжемся!`;
 
-  const form = document.querySelector(formClass);
+  const form = document.querySelector(formId);
 
   const inputs = form.querySelectorAll(`input`);
 
@@ -74,6 +74,9 @@ const sendForm = (formClass) => {
   };
 
 };
-sendForm(`.main-form`);
-sendForm(`.capture-form`);
-sendForm(`.director-form`);
+sendForm(`#form-1`);
+sendForm(`#form-2`);
+sendForm(`#form-3`);
+sendForm(`#form-4`);
+sendForm(`#form-5`);
+sendForm(`#form-6`);

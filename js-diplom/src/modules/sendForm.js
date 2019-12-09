@@ -80,3 +80,4 @@ sendForm(`#form-3`);
 sendForm(`#form-4`);
 sendForm(`#form-5`);
 sendForm(`#form-6`);
+sendForm(`#form-7`);

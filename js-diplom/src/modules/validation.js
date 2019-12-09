@@ -12,6 +12,11 @@ const validation = () => {
         item.value = item.value.replace(/[^\sа-яА-ЯёЁ]/, '');
       });
     }
+    if (item.type === `number`) {
+      item.addEventListener(`input`, () => {
+        item.value = item.value.replace(/[a-z]/gi, '');
+      });
+    }
   });
 
 
